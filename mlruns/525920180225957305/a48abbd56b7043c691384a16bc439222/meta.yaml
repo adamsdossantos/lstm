@@ -1,0 +1,15 @@
+artifact_uri: file:///g:/FIAP/4_Deep_Learning/Tech_Challenge_4/mlruns/525920180225957305/a48abbd56b7043c691384a16bc439222/artifacts
+end_time: 1747765377841
+entry_point_name: ''
+experiment_id: '525920180225957305'
+lifecycle_stage: active
+run_id: a48abbd56b7043c691384a16bc439222
+run_name: lstm_stock_price_prediction
+run_uuid: a48abbd56b7043c691384a16bc439222
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1747765362356
+status: 3
+tags: []
+user_id: adams
