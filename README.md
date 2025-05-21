@@ -68,6 +68,12 @@ Todas as dependências estão listadas no arquivo pyproject.toml e bloqueadas no
 ```
 ## Arquitetura da API
 
+![arquitetura](arquitetura.png)
+
+## Fluxograma do API
+
+![fluxograma](fluxograma.png)
+
 
 ## Licença
 
