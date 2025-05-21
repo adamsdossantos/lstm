@@ -6,6 +6,7 @@ from modelos import LSTM, PriceData
 from utils.activate_mlflow import setup_mlflow, MLFLOW_EXPERIMENT_ID
 import mlflow
 
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # FastAPI
 router = APIRouter(tags=['Predict'])
@@ -17,7 +18,7 @@ mlflow_ready = setup_mlflow()
 # Model
 try:
     model = LSTM(1,4,1)
-    model.load_state_dict(torch.load('utils/model.pth', map_location='cpu'))
+    model.load_state_dict(torch.load('utils/model.pth')).to(device)
     model.eval()
 
     scaler = torch.load('utils/scaler.pkl')
@@ -43,7 +44,7 @@ async def predict_price(data: PriceData):
         input_array[0,1:] = sequence
         scale_data = scaler.transform(input_array)[0,1:]
 
-        X = torch.tensor(scale_data, dtype=torch.float32).unsqueeze(0).unsqueeze(2)
+        X = torch.tensor(scale_data, dtype=torch.float32).unsqueeze(0).unsqueeze(2).to(device)
 
         with torch.no_grad():
             prediction = model(X).item()    

@@ -16,6 +16,9 @@ export PATH="$HOME/.cargo/bin:$HOME/.local/bin:$PATH"
 which uv
 uv --version
 
-# Install project using UV and pyproject.toml
+# Install CPU-only PyTorch first
+uv pip install torch==2.2.2 torchvision==0.17.2 torchaudio==2.2.2
+
+# Then install the rest of the project
 cd project_api
 uv pip install -e .
