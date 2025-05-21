@@ -23,8 +23,8 @@ Este projeto utiliza o [UV](https://github.com/astral-sh/uv) para gerenciamento 
 ```bash
 pip install uv
 
-git clone https://github.com/seu-usuario/seu-repo.git
-cd seu-repo
+git clone https://github.com/adamsdossantos/lstm.git
+cd repo
 uv venv
 uv pip install -r uv.lock
 ```
@@ -68,12 +68,15 @@ Todas as dependências estão listadas no arquivo pyproject.toml e bloqueadas no
 ```
 ## Arquitetura da API
 
-![arquitetura](arquitetura.png)
+![arquitetura](images/arquitetura.png)
 
 ## Fluxograma do API
 
-![fluxograma](fluxograma.png)
+![fluxograma](images/fluxograma.png)
 
+## Contribuições
+
+Este projeto não aceita contribuições.
 
 ## Licença
 
