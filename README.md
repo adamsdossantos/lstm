@@ -13,6 +13,7 @@ Este projeto implementa um modelo LSTM (Long Short-Term Memory) para prever pre�
 - **Monitoramento de Modelo**: MLflow 
 - **Visualização do Monitoramento**: Databricks 
 - **Outras Ferramentas**: Scikit-learn, Uvicorn, PyProject (gerenciamento de dependências via UV)
+- **Plataforma de Publicação em Produção**: render.com
 
 
 
@@ -42,8 +43,7 @@ uvicorn project_api.main:app --reload
 ```
 A API estará disponível em: http://127.0.0.1:8000
 
-A documentação interativa estará disponível em:
-http://127.0.0.1:8000/docs
+A documentação interativa estará disponível em: http://127.0.0.1:8000/docs
 
 ## Configuração
 
@@ -52,11 +52,12 @@ Todas as dependências estão listadas no arquivo pyproject.toml e bloqueadas no
 ## Estrutura do Projeto
 
 ```bash
-├── stock_prediction.ipynb      # Treinamento e avaliação do modelo
-├── pyproject.toml                   # Lista de dependências
+├── stock_prediction.ipynb           # Treinamento e avaliação do modelo
+├── history.tx                       # histórico de preços para teste
 ├── uv.lock                          # Versões bloqueadas das dependências
 └── project_api/
     ├── __init__.py
+    ├── pyproject.toml               # Lista de dependências
     ├── main.py                      # Ponto de entrada da aplicação FastAPI
     ├── modelos.py                   # Definição do modelo LSTM
     ├── route/
@@ -73,6 +74,12 @@ Todas as dependências estão listadas no arquivo pyproject.toml e bloqueadas no
 ## Fluxograma do API
 
 ![fluxograma](images/fluxograma.png)
+
+## API em Produção
+
+A API em produção pode ser acessada pelo link abaixo.
+
+https://lstm-preco-acoes.onrender.com/docs
 
 ## Contribuições
 
